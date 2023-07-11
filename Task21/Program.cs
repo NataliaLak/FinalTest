@@ -7,7 +7,7 @@ void ShowDistance(double a1, double a2, double a3, double b1, double b2, double 
     double distance = Math.Sqrt(Math.Pow(a1 - b1, 2) + Math.Pow(a2 - b2, 2) + Math.Pow(a3 - b3, 2));
 
 
-   Console.WriteLine ($"Расстояние между двух точек: {distance}");
+   Console.WriteLine ($"Расстояние между двух точек: {Math.Round(distance, 2)}");
 }
 
 int GetInput(string text)
