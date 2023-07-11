@@ -12,7 +12,7 @@ int lastDigit = n % 10;
 
     if (firstDigit == lastDigit & secondDigit == fourthDigit)
     {
-        Console.WriteLine($"Число {n} -> палиндром", n);
+        Console.WriteLine($"Число {n} -> палиндром");
     }
     else
         Console.WriteLine($"Число {n} -> не палиндром.");
