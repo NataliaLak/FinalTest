@@ -3,7 +3,7 @@
 // 12821 -> да
 // 23432 -> да
 
-void Polindrom(int n)
+void Pаlindrom(int n)
 {
 int firstDigit = n / 10000;
 int secondDigit = n / 1000 % 10;
@@ -24,4 +24,4 @@ int n = int.Parse(Console.ReadLine());
 n = Math.Abs(n);
 
 
-Polindrom(n);
+Pаlindrom(n);
