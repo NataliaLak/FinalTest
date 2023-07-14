@@ -8,7 +8,7 @@ void FillArray(int[] collection)
     int length = collection.Length;
     for (int i = 0; i < length; i++)
     {
-        collection[i] = new Random().Next(101);
+        collection[i] = new Random().Next(100);
     }
 }
 
@@ -21,4 +21,5 @@ string secondRow = string.Join(", ", array.Skip(5).Take(3));
 Console.WriteLine("Рандомный массив из 8 элементов:");
 Console.WriteLine($"[{firstRow}]");
 Console.WriteLine($"[{secondRow}]");
+
 
