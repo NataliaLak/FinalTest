@@ -20,7 +20,7 @@ int[] GenerateRandomArray(int length)
 
     for (int i = 0; i < length; i++)
     {
-        array[i] = new Random().Next(-100, 100); // Генерация случайного трехзначного числа
+        array[i] = new Random().Next(-100, 100); 
     }
     return array;
 }
