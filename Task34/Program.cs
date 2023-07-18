@@ -24,7 +24,6 @@ int[] GenerateRandomArray(int length)
 }
 
 int[] numbers = GenerateRandomArray(4); // Замените 4 на желаемый размер массива
-Console.WriteLine("Задайте массив:");
 Console.WriteLine($"[{String.Join(",", numbers)}]");
 
 int evenCount = CountEvenNumbers(numbers);
