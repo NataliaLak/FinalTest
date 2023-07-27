@@ -7,27 +7,29 @@
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
 
-
-int GetElement(int[,] array, int row, int column)
+void GetElement(int[,] array, int number)
 {
-    if (row < 0 || row >= array.GetLength(0) || column < 0 || column >= array.GetLength(1))
+    bool numberExist = false;
+
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        return -1;
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (array[i, j] == number)
+            {
+                numberExist = true;
+                Console.WriteLine($"{number} -> есть в массиве");
+                break;
+            }
+
+        }
+
     }
-
-    return array[row, column];
+    if (numberExist == false)
+    {
+        Console.WriteLine("Такого элемента в массиве нет");
+    }
 }
-    int element = GetElement(massive, row, column);
-        if (element != -1)
-        {
-            Console.WriteLine($"Значение элемента: {element}");
-        }
-        else
-        {
-            Console.WriteLine("Такого элемента в массиве нет");
-        }
-    
-
 void Print2dMassive(int[,] massive)
 {
     for (int i = 0; i < massive.GetLength(0); i++)
@@ -61,8 +63,8 @@ int GetInput(string text)
 
 int m = GetInput("Введите количество строк массива: ");
 int n = GetInput("Введите количество столбцов массива: ");
+int number = GetInput("Введите искомый элемент массива: ");
 int[,] massive = Create2dMassive(m, n, -99, 99);
 Print2dMassive(massive);
-int number = GetInput("Введите искомый элемент массива: ");
-int element = GetElement(array, row, column);
-
+Console.WriteLine();
+GetElement(massive, number);
