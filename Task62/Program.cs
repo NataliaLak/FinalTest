@@ -37,7 +37,9 @@ void Print2DArray(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write($"{array[i, j]}\t");
+            if (array[i, j] < 10) Console.Write($"0{array[i, j]}\t");
+            else Console.Write($"{array[i, j]}\t");
+
         }
         Console.WriteLine();
     }
