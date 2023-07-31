@@ -71,7 +71,7 @@ int[,] GenerateSecondRandomArray2D(int rows, int columns, int start, int finish)
     {
         for (int j = 0; j < array2.GetLength(1); j++)
         {
-            array2[i, j] = new Random().Next(start, finish);
+            array2[i, j] = new Random().Next(start, finish + 1);
         }
     }
     return array2;
@@ -85,7 +85,7 @@ int[,] GenerateFirstRandomArray2D(int rows, int columns, int start, int finish)
     {
         for (int j = 0; j < array1.GetLength(1); j++)
         {
-            array1[i, j] = new Random().Next(start, finish);
+            array1[i, j] = new Random().Next(start, finish + 1);
         }
     }
     return array1;
