@@ -3,58 +3,55 @@
 // Примеры:
 // [“Hello”, “2”, “world”, “:-)”] → [“2”, “:-)”]
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
-// [“Russia”, “Denmark”, “Kazan”] → []
+// [“3”, “Denmark”, “Kazan”] → []
 
-string[] GetThreeSymbol(string[] inputArray)
+string[] GetThreeSymbol(string[] array)
 {
-    if (inputArray.Length == 0)
-    {
-        return new string[0];
-    }
-
-    int count = 0;
-
     // Считаем, сколько строк удовлетворяют условию
-    for (int i = 0; i < inputArray.Length; i++)
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
     {
-        if (inputArray[i].Length <= 3)
+        if (array[i].Length <= 3)
         {
             count++;
         }
     }
+    
+    // Создаем новый массив на основе подсчитанного количества строк
+    string[] resultArray = new string[count];
 
-    string[] resultArray = new string[count]; // Создаем новый массив на основе подсчитанного количества строк
-
-    int index = 0;
-    for (int i = 0; i < inputArray.Length; i++)
+    // Копируем строки из исходного массива в новый массив
+    count = 0;
+    for (int i = 0; i < array.Length; i++)
     {
-        if (inputArray[i].Length <= 3)
+        if (array[i].Length <= 3)
         {
-            resultArray[index] = inputArray[i];
-            index++;
+            resultArray[count] = array[i];
+            count++;
         }
     }
 
     return resultArray;
 }
+
 string[] CreateArray(int size)
 {
     string[] array = new string[size];
     for (int i = 0; i < size; i++)
     {
-        Console.WriteLine("Введите элементы массива");
+        Console.Write("Введите элементы массива: ");
         array[i] = Console.ReadLine();
     }
     return array;
 }
 int GetInput(string text)
 {
-    Console.WriteLine(text);
+    Console.Write(text);
     return Convert.ToInt32(Console.ReadLine());
 }
 
 int size = GetInput("Введите количество строк в массиве: ");
 string[] array = CreateArray(size);
-
-string[] newArray = GetThreeSymbol(inputArray);
-Console.WriteLine($"[{string.Join(",", newArray)}]");
+Console.Write($"[{string.Join(",", array)}] ");
+string[] newArray = GetThreeSymbol(array);
+Console.WriteLine($"-> [{string.Join(",", newArray)}]");
