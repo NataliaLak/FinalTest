@@ -16,23 +16,18 @@ string[] GetThreeSymbol(string[] array)
             count++;
         }
     }
-    
+
     // Создаем новый массив на основе подсчитанного количества строк
     string[] resultArray = new string[count];
 
-    // Копируем строки из исходного массива в новый массив
-    count = 0;
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < count; i++)
     {
-        if (array[i].Length <= 3)
-        {
-            resultArray[count] = array[i];
-            count++;
-        }
+        resultArray[i] = array[i];
     }
 
     return resultArray;
 }
+
 
 string[] CreateArray(int size)
 {
